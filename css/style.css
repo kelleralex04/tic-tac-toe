@@ -1,0 +1,115 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    font-family: 'Ubuntu Mono', monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #0174BE;
+}
+
+header {
+    font-size: 10vmin;
+    color: #FFC436;
+    letter-spacing: 1vmin;
+    background-color: #0C356A;
+    border: 0.5vmin solid #FFC436;
+    padding: 1vmin 2vmin;
+}
+
+h1 {
+    font-size: 3vmin;
+    color: #FFC436;
+    letter-spacing: 1vmin;
+    background-color: #0C356A;
+    border: 0.2vmin solid #FFC436;
+    padding: 0.5vmin 1.5vmin;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(3, 15vmin);
+    grid-template-rows: repeat(3, 15vmin);
+}
+
+#board > div {
+    border: 0.5vmin solid #FFC436;
+    background-color: #FFF0CE;
+    position: relative;
+    height: 15vmin; 
+    width: 15vmin;  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#X-markers {
+    display: grid;
+    grid-template-columns: repeat(3, 15vmin);
+    grid-template-rows: repeat(3, 15vmin);
+    margin-top: -45vmin;
+    visibility: hidden;
+}
+
+#X-markers > div {
+    position: relative;
+    height: 15vmin; 
+    width: 15vmin;  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#X-markers > div::before,
+#X-markers > div::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 1vmin;
+    background-color: #0C356A;
+}
+
+#X-markers > div::before {
+    transform: rotate(45deg);
+}
+
+#X-markers > div::after {
+    transform: rotate(-45deg);
+} 
+
+#O-markers {
+    display: grid;
+    grid-template-columns: repeat(3, 15vmin);
+    grid-template-rows: repeat(3, 15vmin);
+    margin-top: -45vmin;
+    visibility: hidden;
+}
+
+#O-markers > div {
+    position: relative;
+    height: 14vmin; 
+    width: 14vmin;  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1vmin solid #0C356A;
+    margin: .5vmin 0 0 .5vmin;
+}
+
+button {
+    margin-top: 4vmin;
+    padding: 2vmin;
+    font-size: 2vmin;
+    border: 0.1vmin solid #FFC436;
+    background-color: #0C356A;
+    color: #FFC436;
+    padding: 1vmin 1.5vmin;
+}
+
+
