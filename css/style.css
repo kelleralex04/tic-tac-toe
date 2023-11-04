@@ -112,4 +112,8 @@ button {
     padding: 1vmin 1.5vmin;
 }
 
+button:hover {
+    color: #0C356A;
+    background-color: #FFC436;
+}
 
