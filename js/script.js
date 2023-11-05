@@ -41,9 +41,13 @@ function placeMarker(evt) {
     board[colIdx][rowIdx] = turn;
     turn *= -1;
     if (board.some((row) => row.includes(0))) {
-        winner = getWinner(colIdx,rowIdx);
+        winner = getWinner(colIdx, rowIdx);
     } else {
-        winner = 'T'
+        if (getWinner(colIdx, rowIdx)) {
+            winner = getWinner(colIdx, rowIdx);
+        } else{
+        winner = 'T';
+        }
     }
     render();
 }
@@ -74,7 +78,9 @@ function checkHorizontalWin(colIdx, rowIdx) {
 }
 
 function checkVerticalWin(colIdx, rowIdx) {
-    return countAdjacent(colIdx, rowIdx, 0, -1) === 2 ? board[colIdx][rowIdx] : null;
+    const adjCountUp = countAdjacent(colIdx, rowIdx, 0, -1);
+    const adjCountDown = countAdjacent(colIdx, rowIdx, 0, 1);
+    return (adjCountUp + adjCountDown) >= 2 ? board[colIdx][rowIdx] : null;
 }
 
 function countAdjacent(colIdx, rowIdx, colOffset, rowOffset) {
