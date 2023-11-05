@@ -92,14 +92,14 @@ h1 {
 
 #O-markers > div {
     position: relative;
-    height: 14vmin; 
-    width: 14vmin;  
+    height: 13vmin; 
+    width: 13vmin;  
     display: flex;
     flex-direction: column;
     justify-content: center;
     border-radius: 50%;
     border: 1vmin solid #0C356A;
-    margin: .5vmin 0 0 .5vmin;
+    margin: 1vmin 0 0 1vmin;
 }
 
 button {
